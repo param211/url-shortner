@@ -2,7 +2,6 @@ click==7.1.2
 dataclasses==0.7
 fastapi==0.61.1
 h11==0.11.0
-pkg-resources==0.0.0
 pydantic==1.7
 redis==3.5.3
 starlette==0.13.6
