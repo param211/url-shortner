@@ -1,5 +1,7 @@
 *.bak
 
+dump.rdb
+
 # Database
 *.sqlite3
 
