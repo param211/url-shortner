@@ -43,8 +43,8 @@ def shorten_url(item: Item):
     if r.get(url) is None:
         new_name = item.custom_target or str(uuid.uuid4())[-6:]
         if r.mset({url: new_name}):
-            return {"url": url, "short": r.get(url)}
+            return {"short": r.get(url)}
         else:
             return {"message": "failed"}
 
-    return {"message": "URL already exists", "short": r.get(url)}
+    return {"short": r.get(url)}
