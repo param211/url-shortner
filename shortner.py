@@ -2,6 +2,7 @@ import uuid
 import os
 import redis
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from starlette.responses import RedirectResponse
 
@@ -9,6 +10,15 @@ from starlette.responses import RedirectResponse
 app = FastAPI()
 # r = redis.Redis()
 r = redis.from_url(os.environ.get("REDIS_URL"))
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Class to store url-name pair
