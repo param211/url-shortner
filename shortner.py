@@ -26,9 +26,10 @@ def read_root():
 def redirect_url(short: str):
     for key in r.keys():
         if r.get(key).decode("utf8") == short:
-            return RedirectResponse(url=key.decode("utf8"))
+            return {"url": key.decode("utf8")}
+            # return RedirectResponse(url=key.decode("utf8"))
 
-    return {"message": "URL not defined"}
+    return {"message": "URL does not exist"}
 
 
 # Define POST
