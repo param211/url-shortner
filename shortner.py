@@ -6,7 +6,8 @@ from starlette.responses import RedirectResponse
 
 # Start app and server
 app = FastAPI()
-r = redis.Redis()
+# r = redis.Redis()
+r = redis.from_url(os.environ.get("REDIS_URL"))
 
 
 # Class to store url-name pair
