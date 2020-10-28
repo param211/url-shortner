@@ -1,4 +1,5 @@
 import uuid
+import os
 import redis
 from fastapi import FastAPI
 from pydantic import BaseModel
