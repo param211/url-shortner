@@ -30,7 +30,7 @@ class Item(BaseModel):
 # Test the root
 @app.get("/")
 def read_root():
-    return {"message": "Yo Yo Param Singh!"}
+    return RedirectResponse(url="https://param211.github.io/link")
 
 
 # Redirect
